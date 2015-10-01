@@ -1,6 +1,6 @@
 /*
  * NG-NOTICE MODULE
- * directive: <ng-notice />
+ * directive: <ng-notice></ng-notice>
  * Receive: 
  *  txt - text
  *  params:
@@ -27,7 +27,7 @@ angular.module('ng-notice', [])
           scopeName: '=',
           controlName: '='
         },
-        template: '<div ng-class="notification.class" class="alert" ng-repeat="notification in scopeName" ng-bind="notification.text"></div>',
+        template: '<div ng-class="notice.class" class="alert" ng-repeat="notice in scopeName" ng-bind="notice.text"></div>',
         compile: function(element, attrs){
           if (!attrs.controlName) { 
             attrs.controlName = 'noticeCtrl';
@@ -41,6 +41,7 @@ angular.module('ng-notice', [])
           
           Notice.red = function(text){
             var text = (text || 'Error');
+            console.log( $rootScope[$attrs.scopeName] )
             return $rootScope[$attrs.scopeName].push({
               'text': text,
               'success': false 

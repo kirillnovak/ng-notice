@@ -1,3 +1,4 @@
+/*
 var metas = document.getElementsByTagName('meta');
 var i;
 if (navigator.userAgent.match(/iPhone/i)) {
@@ -15,18 +16,29 @@ function gestureStart() {
     }
   }
 }
+*/
 ///
 
 var app = angular.module('notice-demo', [
+  // 'ui.bootstrap',
   'ng-notice'
 ]);
 
-app.controller('MainCtrl', function($scope) {
+app.run(function($rootScope){
+  $rootScope.notifications = [];
+});
 
+app.controller('MainCtrl', function(
+  $scope,
+  Notice
+) {
+  $scope.notice = Notice;
+
+  /*
   $scope.notice = function(){
-    console.log( 1 )
+    Notice.red('Show red notice')
   }
-  
-  
+ */
+   
 });
 
