@@ -1,6 +1,6 @@
 /*
  * NG-NOTICE MODULE
- * directive: <notice />
+ * directive: <ng-notice />
  * Receive: 
  *  txt - text
  *  params:
@@ -12,7 +12,7 @@
  */
 
 'use strict';
-angular.module('notice', [])
+angular.module('ng-notice', [])
   .factory('Notice', function () {
     return {
       newNotice: function(){

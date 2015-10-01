@@ -15,3 +15,18 @@ function gestureStart() {
     }
   }
 }
+///
+
+var app = angular.module('notice-demo', [
+  'ng-notice'
+]);
+
+app.controller('MainCtrl', function($scope) {
+
+  $scope.notice = function(){
+    console.log( 1 )
+  }
+  
+  
+});
+
